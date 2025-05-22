@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- comentário -->
+<html lang="pt-pt">
+<head>
+	<meta charset="UTF-8">
+	<title>Localização de Explorações</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="leaflet.wmslegend.css"/>
+	<script src="leaflet.wmslegend.js"></script>
+	<link rel="stylesheet" href="estilo_mapa.css">
+</head>
+<body>
+	<div id="mapa"></div>
+	
+	<div id="map-legend">
+	  <div class="legend-item">
+		<img src="https://cdn-icons-png.flaticon.com/512/17207/17207630.png" alt="Bordaleira Icon">
+		<span>Bordaleira de Entre Douro e Minho</span>
+	  </div>
+	  <div class="legend-item">
+		<img src="https://static.vecteezy.com/system/resources/previews/009/589/758/non_2x/location-location-pin-location-icon-transparent-free-png.png" alt="Churra Icon">
+		<span>Churra do Minho</span>
+	  </div>
+	</div>
+
+	<!-- Título do mapa exibido no topo da página -->
+	<div id="titulo-mapa"> Mapa da Distribuição Geográfica das Explorações </div>
+
+	<!-- Container que organiza as imagens com links associados -->
+	<div id="container-imagens">
+		<!-- Link para abrir o site da ESA (Escola Superior Agrária) ao clicar na imagem -->
+		<a href="https://www.ipvc.pt/esa/" target="_blank">
+			<img id="imagem-ipvc" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSisL7DNC3Ovs-NQnU8TIuapW-XR3DAyi6_bA&s" alt="Imagem do mapa">
+		</a>
+		<!-- Imagem local no canto inferior esquerdo -->
+		<img id="imagem-logos" src="C:/Users/Utilizador/Desktop/EXPL_final/logos.jpg" alt="logos">
+	</div>
+
+	<!-- Campo de busca com sugestões -->
+	<div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: white; padding: 10px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.3); z-index: 1000;">
+	  <input type="text" id="buscaNome" list="nomesExploracoes" placeholder="Digite o nome da exploração" style="padding: 5px; width: 250px;">
+	  <datalist id="nomesExploracoes"></datalist>
+	  <button onclick="procurarPonto()" style="padding: 5px;">Procurar</button>
+	</div>
+
+	<script src="codigo_mapa.js"></script>
+</body>
+</html>
